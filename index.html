@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etherix Server FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #272727;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        button.accordion {
+            background-color: #272727;
+            color: #ffd700;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            transition: 0.3s;
+            border-bottom: 1px solid #444;
+        }
+        button.accordion:hover {
+            background-color: #333;
+        }
+        div.panel {
+            padding: 0 15px;
+            display: none;
+            background-color: #2c2c2c;
+            overflow: hidden;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li::before {
+            content: "» ";
+            color: #00ff00;
+        }
+        code {
+            background-color: #444;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>Etherix Server FAQ</header>
+    <main>
+        <button class="accordion">How to claim land?</button>
+        <div class="panel">
+            <p>To claim land, you need a <strong>Golden Shovel</strong>:</p>
+            <ul>
+                <li>Right-click one corner of the area you want to claim.</li>
+                <li>Right-click the opposite corner.</li>
+            </ul>
+            <p>The land between these two points will now be claimed.</p>
+            <p>To allow someone to build or interact on your claim, use:</p>
+            <p><code>/trust &lt;playername&gt;</code></p>
+            <p>To remove all your claims, use: <code>/abandonallclaims</code></p>
+        </div>
+
+        <button class="accordion">How to claim daily rewards?</button>
+        <div class="panel">
+            <p>Use: <code>/daily</code></p>
+            <p>When you claim your reward, you will receive a <strong>Daily Crate Key</strong>. Use it at the <strong>Crates area</strong> at <strong>Survival Spawn</strong>.</p>
+        </div>
+
+        <button class="accordion">I have VIP. What benefits do I get?</button>
+        <div class="panel">
+            <ul>
+                <li><code>/back</code> – Return to your previous location</li>
+                <li><code>/enderchest</code> – Open your Ender Chest anywhere</li>
+                <li><code>/hat</code> – Put any item on your head</li>
+                <li><code>/near</code> – See players near you</li>
+                <li><code>/workbench</code> – Open a crafting table anywhere</li>
+                <li><strong>[VIP]</strong> – Special rank in chat</li>
+                <li>VIP Crate Key – 1 per 24 hours using <code>/viprewards</code></li>
+            </ul>
+        </div>
+
+        <button class="accordion">How do I get money on the server?</button>
+        <div class="panel">
+            <p>Earn passive money by enchanting, woodcutting, mining, etc.</p>
+            <p>Check jobs and leaderboard: <code>/jobs</code></p>
+            <p>Sell items: <code>/sell hand</code></p>
+        </div>
+
+        <button class="accordion">How do I join events?</button>
+        <div class="panel">
+            <p>Events are announced in-game or on Discord. Join at the scheduled time to win prizes!</p>
+        </div>
+
+        <button class="accordion">How do I teleport to friends?</button>
+        <div class="panel">
+            <p>Send a request: <code>/tpa &lt;player&gt;</code></p>
+            <p>The other player must accept: <code>/tpaccept</code></p>
+        </div>
+
+        <button class="accordion">How do I open crates?</button>
+        <div class="panel">
+            <p>Use a crate key matching the crate type (e.g., <strong>Food Key</strong> opens <strong>Food Crate</strong>).</p>
+            <p>Use it at the <strong>Crates area</strong> at <strong>Survival Spawn</strong>.</p>
+        </div>
+    </main>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

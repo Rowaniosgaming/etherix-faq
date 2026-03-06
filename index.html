@@ -21,7 +21,7 @@
         text-align: center;
         font-size: 2em;
         font-weight: 600;
-        color: #ffd700;
+        color: #00bfff; /* Blauw header */
         letter-spacing: 1px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
@@ -43,7 +43,7 @@
     }
     .tab-btn {
         background-color: #2a2a2a;
-        color: #ffd700;
+        color: #00bfff;
         border: none;
         padding: 10px 20px;
         cursor: pointer;
@@ -52,14 +52,14 @@
         transition: background-color 0.3s;
     }
     .tab-btn.active, .tab-btn:hover {
-        background-color: #ffd700;
-        color: #222;
+        background-color: #00bfff;
+        color: #1b1b1b;
     }
 
     /* Accordion knoppen */
     button.accordion {
         background-color: #2a2a2a;
-        color: #ffd700;
+        color: #00bfff;
         cursor: pointer;
         padding: 18px 20px;
         width: 100%;
@@ -80,8 +80,8 @@
     }
 
     button.accordion.active {
-        background-color: #ffd700;
-        color: #222;
+        background-color: #00bfff;
+        color: #1b1b1b;
     }
 
     /* Accordion panels */
@@ -91,7 +91,7 @@
         overflow: hidden;
         transition: max-height 0.3s ease;
         padding: 0 20px;
-        border-left: 3px solid #ffd700;
+        border-left: 3px solid #00bfff;
         margin-bottom: 15px;
         border-radius: 0 0 6px 6px;
     }
@@ -106,7 +106,7 @@
     }
     ul li::before {
         content: "• ";
-        color: #00ff00;
+        color: #32cd32; /* Limegroen bullets */
         font-weight: bold;
     }
 
@@ -115,7 +115,7 @@
         background-color: #333;
         padding: 3px 6px;
         border-radius: 4px;
-        color: #ffd700;
+        color: #00bfff; /* Blauw code */
         font-family: monospace;
     }
     .copy-btn {
@@ -126,40 +126,11 @@
         border: none;
         border-radius: 4px;
         background-color: #444;
-        color: #ffd700;
+        color: #00bfff;
         transition: background-color 0.3s;
     }
     .copy-btn:hover {
         background-color: #555;
-    }
-
-    /* Light theme */
-    body.light-theme {
-        background-color: #f5f5f5;
-        color: #222;
-    }
-    body.light-theme header {
-        background-color: #eee;
-        color: #222;
-    }
-    body.light-theme main {
-        background-color: #fff;
-    }
-    body.light-theme div.panel {
-        background-color: #f9f9f9;
-        border-left: 3px solid #222;
-    }
-    body.light-theme code {
-        background-color: #eee;
-        color: #222;
-    }
-    body.light-theme .tab-btn {
-        background-color: #ddd;
-        color: #222;
-    }
-    body.light-theme .tab-btn.active, body.light-theme .tab-btn:hover {
-        background-color: #222;
-        color: #ffd700;
     }
 
     /* Responsive */
@@ -175,11 +146,6 @@
 <header>Etherix Server FAQ</header>
 
 <main>
-    <!-- Theme toggle -->
-    <div style="text-align:center; margin-bottom:20px;">
-        <button id="themeToggle" class="tab-btn">Switch Theme</button>
-    </div>
-
     <!-- Tabs -->
     <div class="tabs">
         <button class="tab-btn active" data-tab="all">All</button>
@@ -253,7 +219,7 @@
 /* Accordion functionality with smooth scroll */
 const acc = document.getElementsByClassName("accordion");
 for (let i = 0; i < acc.length; i++) {
-    acc[i].setAttribute("tabindex", "0"); // toetsenbord-navigatie
+    acc[i].setAttribute("tabindex", "0");
     acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
         const panel = this.nextElementSibling;
@@ -279,16 +245,9 @@ document.querySelectorAll(".copy-btn").forEach(btn => {
     });
 });
 
-/* Theme toggle */
-const themeBtn = document.getElementById("themeToggle");
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-});
-
 /* Tabs filtering */
 document.querySelectorAll(".tabs .tab-btn").forEach(tab => {
     tab.addEventListener("click", () => {
-        // Active button highlight
         document.querySelectorAll(".tabs .tab-btn").forEach(b => b.classList.remove("active"));
         tab.classList.add("active");
 
